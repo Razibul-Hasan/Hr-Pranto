@@ -9,6 +9,7 @@ import Motion from "@/components/Motion";
 const EMAIL = "mohshinimampranto@gmail.com";
 const PHONE = "+8801622710529";
 const PHONE_DISPLAY = "+880 1622-710529";
+const FACEBOOK = "https://www.facebook.com/mohshin.imam.pranto";
 const LINKEDIN = "https://www.linkedin.com/in/mohshin-imam-pranto-982343247";
 
 const nav = [
@@ -206,7 +207,8 @@ export default function Home() {
           </nav>
           <div className="flex items-center gap-3">
             <Btn
-              href="#contact"
+              href={FACEBOOK}
+              external
               label="Hire me"
               tone="red"
               className="hidden min-h-11 [--px:1.1rem] [--py:0.5rem] sm:inline-flex"
