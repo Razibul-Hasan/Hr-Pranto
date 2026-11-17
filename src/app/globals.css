@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Hide the "Powered by Netlify" badge Netlify injects on free-plan sites */
+.nl-wrap,
+.nl-badge,
+.nl-card {
+  display: none !important;
+}
+
 :root {
   --paper: #f1eadb;
   --paper-dark: #e4dbc5;
