@@ -19,12 +19,11 @@ const body = Archivo({
   subsets: ["latin"],
 });
 
-// Set NEXT_PUBLIC_SITE_URL to the final domain; on Vercel the production URL is picked up automatically.
+// Set NEXT_PUBLIC_SITE_URL to the final domain; on Netlify (URL) and Vercel the site URL is picked up automatically.
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+  process.env.URL ?? // Netlify: the primary site URL
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000");
 
 const TITLE = "Mohshin Imam Pranto | HR Generalist in Dhaka, Bangladesh";
 const DESCRIPTION =
