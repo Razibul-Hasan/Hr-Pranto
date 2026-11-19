@@ -369,17 +369,11 @@ export default function HeroScene() {
     let shake = 0;
     let ringT = 1;
     const sp = new THREE.Vector3(0.35, 0.9, HOVER_Z);
-    const tilt = new THREE.Vector2();
 
     const startStampNow = () => {
       if (phase < 0.7) phase = 0.7;
     };
 
-    const onMove = (e: PointerEvent) => {
-      const r = mount.getBoundingClientRect();
-      tilt.set(((e.clientX - r.left) / r.width) * 2 - 1, -(((e.clientY - r.top) / r.height) * 2 - 1));
-    };
-    window.addEventListener("pointermove", onMove);
     renderer.domElement.addEventListener("pointerdown", startStampNow);
 
     const applyStamp = (z: number, mark: { x: number; y: number; z: number }) => {
@@ -513,8 +507,8 @@ export default function HeroScene() {
       last = now;
       if (!visible) return;
       update(dt);
-      world.rotation.y += (tilt.x * 0.22 - world.rotation.y) * 0.05;
-      world.rotation.x += (-0.42 - tilt.y * 0.1 - world.rotation.x) * 0.05;
+      world.rotation.y += (0 - world.rotation.y) * 0.05;
+      world.rotation.x += (-0.42 - world.rotation.x) * 0.05;
       renderer.render(scene, camera);
     };
 
@@ -535,7 +529,6 @@ export default function HeroScene() {
       cancelAnimationFrame(raf);
       io.disconnect();
       ro.disconnect();
-      window.removeEventListener("pointermove", onMove);
       renderer.domElement.removeEventListener("pointerdown", startStampNow);
       disposables.forEach((d) => d.dispose());
       renderer.dispose();

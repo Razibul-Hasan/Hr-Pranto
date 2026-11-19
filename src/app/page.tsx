@@ -31,7 +31,7 @@ const ticker = [
 ];
 
 const stats = [
-  { n: 2, suffix: "+", label: "years in HR" },
+  { n: 3, suffix: "+", label: "years in HR" },
   { n: 150, suffix: "+", label: "people covered by the SOPs I wrote" },
   { n: 3, suffix: "", label: "worlds: software, corporate, factory" },
 ];
@@ -195,9 +195,6 @@ export default function Home() {
           <a href="#top" className="font-display inline-flex min-h-11 items-center text-3xl leading-none tracking-wide sm:text-4xl">
             M.I. PRANTO
           </a>
-          <p className="font-hand hidden text-sm text-ink/70 xl:block">
-            The People Post · Dhaka Edition · 2026
-          </p>
           <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
             {nav.map((n) => (
               <a key={n.href} href={n.href} className="nav-link font-display inline-flex min-h-11 items-center text-xl uppercase">
@@ -304,13 +301,6 @@ export default function Home() {
               </div>
 
               {/* annotations */}
-              <p
-                data-in
-                data-hero-in
-                className="font-hand absolute bottom-[3%] left-[0%] z-10 max-w-[11rem] -rotate-[4deg] bg-marker px-2 py-1 text-base leading-tight sm:text-lg"
-              >
-                click the desk to stamp a CV
-              </p>
               <div
                 data-in
                 data-stamp
@@ -357,7 +347,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption className="font-hand mt-3 text-center text-lg leading-tight">
-                    Pranto, thinking about your leave balance.
+                    Pranto, building people who build the company.
                   </figcaption>
                 </figure>
               </div>
@@ -424,7 +414,7 @@ export default function Home() {
                     aria-hidden
                   />
                   <div className="grid gap-5 lg:grid-cols-[13rem_1fr_1.1fr] lg:gap-10">
-                    <p data-in data-row-in className="font-hand text-xl text-marker">
+                    <p data-in data-row-in className="text-lg font-bold tracking-wide text-marker tabular-nums">
                       {j.time}
                     </p>
                     <div data-in data-row-in>
@@ -455,8 +445,8 @@ export default function Home() {
               <Line>6 things i&apos;ll take</Line>
               <Line>off your plate</Line>
             </h2>
-            <p className="font-hand mt-4 rotate-1 text-xl text-red sm:text-2xl">
-              number 4 saves the most headaches.
+            <p className="mt-4 text-xl font-bold text-red sm:text-2xl">
+              Number 4 saves the most headaches.
             </p>
 
             <ol className="mt-14 grid gap-x-16 gap-y-12 md:grid-cols-2">
@@ -490,7 +480,7 @@ export default function Home() {
                       <p className="font-display text-2xl uppercase leading-none">{e.degree}</p>
                       <p className="mt-1 font-medium">{e.school}</p>
                     </div>
-                    <p className="font-hand text-lg text-red">{e.time}</p>
+                    <p className="text-base font-bold tracking-wide text-red tabular-nums">{e.time}</p>
                   </li>
                 ))}
               </ul>

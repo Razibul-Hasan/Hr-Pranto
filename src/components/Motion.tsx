@@ -113,25 +113,6 @@ export default function Motion() {
           0.35
         );
 
-      /* ---------- cursor parallax in the hero ---------- */
-      const hero = document.querySelector<HTMLElement>("[data-hero]");
-      if (hero && window.matchMedia("(hover: hover)").matches) {
-        const layers = q<HTMLElement>("[data-depth]").map((el) => ({
-          x: gsap.quickTo(el, "x", { duration: 0.9, ease: "power3.out" }),
-          y: gsap.quickTo(el, "y", { duration: 0.9, ease: "power3.out" }),
-          d: parseFloat(el.dataset.depth || "0"),
-        }));
-        const onMove = (e: PointerEvent) => {
-          const nx = e.clientX / window.innerWidth - 0.5;
-          const ny = e.clientY / window.innerHeight - 0.5;
-          layers.forEach((l) => {
-            l.x(nx * l.d);
-            l.y(ny * l.d);
-          });
-        };
-        hero.addEventListener("pointermove", onMove);
-      }
-
       /* ---------- headlines: line-mask reveal ---------- */
       q<HTMLElement>("[data-h]").forEach((h) => {
         gsap.fromTo(

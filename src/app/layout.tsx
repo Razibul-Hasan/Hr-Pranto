@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Archivo, Permanent_Marker } from "next/font/google";
+import { Anton, Archivo, Patrick_Hand } from "next/font/google";
 import "./globals.css";
 
 const display = Anton({
@@ -8,7 +8,7 @@ const display = Anton({
   weight: "400",
 });
 
-const marker = Permanent_Marker({
+const marker = Patrick_Hand({
   variable: "--font-marker",
   subsets: ["latin"],
   weight: "400",
@@ -27,7 +27,7 @@ const siteUrl =
 
 const TITLE = "Mohshin Imam Pranto | HR Generalist in Dhaka, Bangladesh";
 const DESCRIPTION =
-  "HR Generalist in Dhaka with 2+ years in recruitment, onboarding, payroll inputs, KPI tracking and HR policy and SOP development. Currently at WPXPO.";
+  "HR Generalist in Dhaka with 3+ years in recruitment, onboarding, payroll inputs, KPI tracking and HR policy and SOP development. Currently at WPXPO.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
